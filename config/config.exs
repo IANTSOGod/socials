@@ -35,8 +35,10 @@ config :socials, Socials.Mailer,
   username: "iantsochristianrazafindrazaka@example.com",
   password: "hhhhhh321",
   port: 587,
-  ssl: false,  # Si vous utilisez SSL, passez à true
-  tls: :if_available,  # :always si vous voulez forcer TLS
+  # Si vous utilisez SSL, passez à true
+  ssl: false,
+  # :always si vous voulez forcer TLS
+  tls: :if_available,
   auth: :always
 
 # Configure esbuild (the version is required)

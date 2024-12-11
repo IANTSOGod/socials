@@ -101,12 +101,9 @@ defmodule Socials.Users do
   def change_user(%User{} = user, attrs \\ %{}) do
     User.changeset(user, attrs)
   end
- 
-  #Avoir l'user pas l"email
+
+  # Avoir l'user pas l"email
   def get_user_by_email(email) do
     Repo.get_by(User, email: email)
   end
-  
-
-    
 end

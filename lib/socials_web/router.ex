@@ -25,7 +25,7 @@ defmodule SocialsWeb.Router do
     resources "/user", UserController, except: [:new, :edit]
     post "/user/findByEmail", UserController, :get_by_email
     post "/auth/login", AuthController, :login
-    post "/hash", UserController, :hash
+    post "/auth/updatePass", AuthController, :updatePassword
   end
 
   # Other scopes may use custom stacks.

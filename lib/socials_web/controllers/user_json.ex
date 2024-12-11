@@ -23,5 +23,4 @@ defmodule SocialsWeb.UserJSON do
       email: user.email
     }
   end
-
 end

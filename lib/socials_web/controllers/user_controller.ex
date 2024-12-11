@@ -18,6 +18,7 @@ defmodule SocialsWeb.UserController do
 
   def create(conn, %{"user" => user_params}) do
     hashed_password = hash_password(user_params["mdp"])
+
     new_user = %{
       username: user_params["username"],
       mdp: hashed_password,

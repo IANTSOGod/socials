@@ -16,7 +16,7 @@ defmodule Socials.Users.User do
     |> cast(attrs, [:username, :mdp, :email])
     |> validate_required([:username, :mdp, :email])
     |> validate_format(:email, ~r/^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/)
-    |> unique_constraint(:email) 
+    |> unique_constraint(:email)
   end
 
   defimpl Jason.Encoder, for: Socials.Users.User do
