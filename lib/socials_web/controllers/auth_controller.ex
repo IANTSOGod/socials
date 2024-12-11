@@ -40,6 +40,6 @@ defmodule SocialsWeb.AuthController do
     def decrypt(mdp, hashed_password) do
       Bcrypt.verify_pass(mdp, hashed_password)
     end
-        
+    
   end
   

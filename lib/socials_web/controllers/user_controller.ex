@@ -68,14 +68,14 @@ defmodule SocialsWeb.UserController do
         conn
         |> put_status(:not_found)
         |> json(%{message: "Email non enregistré"})
-      
+
       _ ->
         conn
         |> put_status(:bad_request)
         |> json(%{message: "Une erreur est survenue. Veuillez vérifier les données envoyées."})
     end
   end
-  
+
   def get_by_email(conn, _params) do
     conn
     |> put_status(:bad_request)

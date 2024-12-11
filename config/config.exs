@@ -29,7 +29,15 @@ config :socials, SocialsWeb.Endpoint,
 #
 # For production it's recommended to configure a different adapter
 # at the `config/runtime.exs`.
-config :socials, Socials.Mailer, adapter: Swoosh.Adapters.Local
+config :socials, Socials.Mailer,
+  adapter: Swoosh.Adapters.SMTP,
+  relay: "smtp.gmail.com",
+  username: "iantsochristianrazafindrazaka@example.com",
+  password: "hhhhhh321",
+  port: 587,
+  ssl: false,  # Si vous utilisez SSL, passez à true
+  tls: :if_available,  # :always si vous voulez forcer TLS
+  auth: :always
 
 # Configure esbuild (the version is required)
 config :esbuild,

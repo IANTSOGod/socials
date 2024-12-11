@@ -15,7 +15,7 @@ defmodule Socials.Users.User do
     user
     |> cast(attrs, [:username, :mdp, :email])
     |> validate_required([:username, :mdp, :email])
-    |> validate_format(:email, ~r/@/) 
+    |> validate_format(:email, ~r/^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/)
     |> unique_constraint(:email) 
   end
 
