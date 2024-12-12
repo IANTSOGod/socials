@@ -22,7 +22,10 @@ defmodule SocialsWeb.Router do
 
   scope "/api", SocialsWeb do
     pipe_through :api
+
     resources "/user", UserController, except: [:new, :edit]
+    resources "/publications", PublicationController, except: [:new, :edit]
+    resources "/image", ImageController, except: [:new, :edit]
     post "/user/findByEmail", UserController, :get_by_email
     post "/auth/login", AuthController, :login
     post "/auth/updatePass", AuthController, :updatePassword

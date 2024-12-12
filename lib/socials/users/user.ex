@@ -7,6 +7,7 @@ defmodule Socials.Users.User do
     field :mdp, :string
     field :email, :string
 
+    has_many :publications, Socials.Publications.Publication
     timestamps(type: :utc_datetime)
   end
 
