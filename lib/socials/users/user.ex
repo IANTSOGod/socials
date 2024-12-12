@@ -8,6 +8,8 @@ defmodule Socials.Users.User do
     field :email, :string
 
     has_many :publications, Socials.Publications.Publication
+    has_many :conversation, Socials.Conversations.Conversation
+    has_many :message, Socials.Messages.Message
     timestamps(type: :utc_datetime)
   end
 

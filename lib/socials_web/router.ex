@@ -26,6 +26,8 @@ defmodule SocialsWeb.Router do
     resources "/user", UserController, except: [:new, :edit]
     resources "/publications", PublicationController, except: [:new, :edit]
     resources "/image", ImageController, except: [:new, :edit]
+    resources "/conversation", ConversationController, except: [:new, :edit]
+    resources "/message", MessageController, except: [:new, :edit]
     post "/user/findByEmail", UserController, :get_by_email
     post "/auth/login", AuthController, :login
     post "/auth/updatePass", AuthController, :updatePassword

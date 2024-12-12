@@ -12,7 +12,8 @@ defmodule SocialsWeb.PublicationController do
   end
 
   def create(conn, %{"publication" => publication_params}) do
-    with {:ok, %Publication{} = publication} <- Publications.create_publication(publication_params) do
+    with {:ok, %Publication{} = publication} <-
+           Publications.create_publication(publication_params) do
       conn
       |> put_status(:created)
       |> put_resp_header("location", ~p"/api/publications/#{publication}")
@@ -28,7 +29,8 @@ defmodule SocialsWeb.PublicationController do
   def update(conn, %{"id" => id, "publication" => publication_params}) do
     publication = Publications.get_publication!(id)
 
-    with {:ok, %Publication{} = publication} <- Publications.update_publication(publication, publication_params) do
+    with {:ok, %Publication{} = publication} <-
+           Publications.update_publication(publication, publication_params) do
       render(conn, :show, publication: publication)
     end
   end

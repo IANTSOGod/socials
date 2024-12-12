@@ -18,7 +18,8 @@ defmodule SocialsWeb.ImageJSON do
   defp data(%Image{} = image) do
     %{
       id: image.id,
-      path: image.path
+      path: image.path,
+      pub_id: image.pub_id
     }
   end
 end

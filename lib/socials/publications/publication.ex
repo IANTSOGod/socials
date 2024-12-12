@@ -6,7 +6,7 @@ defmodule Socials.Publications.Publication do
     field :description, :string
     field :titre, :string
 
-    belongs_to :user, Socials.Users.User
+    belongs_to :user, Socials.Users.User, foreign_key: :user_id
     has_many :image, Socials.Images.Image
     timestamps(type: :utc_datetime)
   end

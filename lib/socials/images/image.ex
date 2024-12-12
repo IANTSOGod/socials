@@ -4,16 +4,15 @@ defmodule Socials.Images.Image do
 
   schema "image" do
     field :path, :string
-    field :pub_id, :id
 
-    belongs_to :publications, Publications.Publication
+    belongs_to :publications, Socials.Publications.Publication, foreign_key: :pub_id
     timestamps(type: :utc_datetime)
   end
 
   @doc false
   def changeset(image, attrs) do
     image
-    |> cast(attrs, [:path])
-    |> validate_required([:path])
+    |> cast(attrs, [:path, :pub_id])
+    |> validate_required([:path, :pub_id])
   end
 end
